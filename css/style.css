@@ -1494,6 +1494,81 @@ a:focus {
 
 
 /*******************************/
+/*********** Certificates CSS **********/
+/*******************************/
+
+.certificate {
+    padding: 30px 0;
+}
+
+.certificate .section-header h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.certificate .certificate-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 15px;
+    transition: box-shadow 0.3s;
+}
+
+.certificate .certificate-item:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.certificate .certificate-img {
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.certificate .certificate-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.certificate .certificate-item:hover img {
+    transform: scale(1.05);
+}
+
+.certificate .certificate-text h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.certificate .certificate-text p {
+    font-size: 14px;
+    color: #666;
+}
+
+.certificate .certificate-item a.btn {
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #fff;
+    background: #D52027;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition:  0.3s;
+}
+
+.certificate .certificate-item a.btn:hover {
+    color: #D52027;
+    background: #ffffff;
+}
+
+
+/*******************************/
 /********* Footer CSS **********/
 /*******************************/
 .footer {
