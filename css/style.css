@@ -1726,6 +1726,37 @@ a:focus {
     color: white;
     font-size: 20px;
   }
+
+  .company-logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+.timeline-item {
+    position: relative;
+    padding: 20px; /* Adjust as needed for your design */
+    border: 1px solid #ddd; /* Optional for box styling */
+    border-radius: 8px; /* Optional for rounded corners */
+}
+
+.country-flag-indicator {
+    position: absolute;
+    top: 10px; /* Position near the top-right corner */
+    right: 10px; /* Position near the top-right corner */
+    width: 45px; /* Adjust flag size */
+    height: auto;
+}
+
+.country-flag-indicator img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px; /* Optional for rounded flag corners */
+    border: 1px solid #ddd; /* Optional for a small border around the flag */
+}
+
+
   
   /* Style the social media icons with color, if you want */
   .icon-bar a:hover {
