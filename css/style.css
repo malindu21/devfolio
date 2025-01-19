@@ -673,7 +673,7 @@ a:focus {
 
 .experience .timeline .timeline-text h2 {
     margin: 0 0 5px 0;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
 }
 
@@ -681,7 +681,10 @@ a:focus {
 .experience .timeline .timeline-text h4 {
     margin: 0 0 10px 0;
     font-size: 16px;
+    font-style: italic;
     font-weight: 400;
+    text-decoration: underline; /* Adds an underline to the text */
+
 }
 
 .experience .timeline .timeline-text p {
