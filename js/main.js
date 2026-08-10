@@ -31,9 +31,9 @@
         }
 
         if (scrollTop > 200) {
-            $backToTop.fadeIn('slow');
+            $backToTop.addClass('show');
         } else {
-            $backToTop.fadeOut('slow');
+            $backToTop.removeClass('show');
         }
 
         if (scrollTop > 600) {

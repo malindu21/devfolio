@@ -211,7 +211,7 @@ a:focus {
 /* -------- Back to top -------- */
 .back-to-top {
     position: fixed;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 48px;
@@ -224,6 +224,16 @@ a:focus {
     bottom: 20px;
     z-index: 900;
     box-shadow: var(--shadow-glow);
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: opacity .4s var(--ease), transform .4s var(--ease);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .back-to-top i {
@@ -1329,16 +1339,16 @@ a:focus {
 
 .experience .timeline .timeline-date {
     position: absolute;
-    width: 100%;
     top: 38px;
     font-size: 13px;
     font-weight: 700;
     color: var(--cyan);
     text-transform: uppercase;
     letter-spacing: 1px;
+    white-space: nowrap;
     z-index: 1;
     background: rgba(34, 224, 208, 0.08);
-    padding: 7px 14px;
+    padding: 7px 16px;
     border-radius: 999px;
     border: 1px solid rgba(34, 224, 208, 0.3);
     display: inline-flex;
