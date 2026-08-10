@@ -15,10 +15,13 @@
         <title>Malindu | iOS & Android App Developer Portfolio</title>
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%237c5cff'/%3E%3Cstop offset='55%25' stop-color='%233aa0ff'/%3E%3Cstop offset='100%25' stop-color='%2322e0d0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='%230a0a12'/%3E%3Ctext x='50' y='68' font-family='Arial,Helvetica,sans-serif' font-size='56' font-weight='700' text-anchor='middle' fill='url(%23g)'%3EM%3C/text%3E%3C/svg%3E" rel="icon" type="image/svg+xml">
+        <meta name="theme-color" content="#07070c">
 
         <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
         <!-- CSS Libraries -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -28,19 +31,22 @@
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/style.css?v=8" rel="stylesheet">
     </head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="51">
+        <!-- Scroll Progress -->
+        <div class="scroll-progress"><span id="scrollProgressBar"></span></div>
+
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-light navbar-light">
             <div class="container-fluid">
                 <a href="index.html" class="navbar-brand">
-                    <!-- <img src="img/hero.png" alt="Logo" style="height: 30px; margin-right: 10px;"> -->
-                    <span class="brand-text">Portfolio</span>
+                    <span class="brand-text">Malindu<span class="brand-dot">.</span></span>
+                    <span class="available-badge"><i></i>Open to work</span>
                 </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
+                    <span class="hamburger"><span></span><span></span><span></span></span>
                 </button>
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
@@ -50,13 +56,9 @@
                         <a href="#service" class="nav-item nav-link">Service</a>
                         <a href="#experience" class="nav-item nav-link">Experience</a>
                         <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-<!--                         <a href="pdf/Malindu_MCK_SSE_CV.pdf" class="nav-item nav-link" download="Malindu_MCK_SSE_CV.pdf">Download CV</a> -->
-                        <!-- <a href="#price" class="nav-item nav-link">Price</a>
-                        <a href="#review" class="nav-item nav-link">Review</a>
-                        <a href="#team" class="nav-item nav-link">Team</a> -->
-                        <a href="#certifications" class="nav-item nav-link">Certifications</a> 
+                        <a href="#certifications" class="nav-item nav-link">Certifications</a>
                         <a href="#blog" class="nav-item nav-link">Blog</a>
-                        <a href="#contact" class="nav-item nav-link">Contact</a>
+                        <a href="#contact" class="nav-item nav-link nav-cta">Contact</a>
                     </div>
                 </div>
             </div>
@@ -67,31 +69,78 @@
 
         <!-- Hero Start -->
         <div class="hero" id="home">
+            <div class="hero-blobs" aria-hidden="true">
+                <span class="blob blob-1"></span>
+                <span class="blob blob-2"></span>
+                <span class="blob blob-3"></span>
+                <span class="hero-grid"></span>
+            </div>
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-sm-12 col-md-6">
                         <div class="hero-content">
                             <div class="hero-text">
+                                <span class="hero-eyebrow wow fadeInUp" data-wow-delay="0.0s"><i></i>Available for Freelance &amp; Full-time Roles</span>
                                 <p>I'm</p>
                                 <h1>Malindu</h1>
                                 <h2></h2>
                                 <div class="typed-text">Senior Software Engineer, iOS Developer, Android Developer, Flutter Developer</div>
                             </div>
                             <div class="hero-btn">
-                                <a class="btn"  href="tel:+94713278512">Hire Me</a>
-                                <a class="btn"  href="tel:+94713278512">Contact Me</a>
+                                <a class="btn btn-hero-primary magnetic" href="#contact"><span>Let's Work Together</span> <i class="fas fa-arrow-right"></i></a>
+                                <a class="btn btn-hero-ghost magnetic" href="pdf/Malindu_MCK_SSE_CV.pdf" download="Malindu_MCK_SSE_CV.pdf"><i class="fas fa-download"></i> <span>Download CV</span></a>
+                            </div>
+                            <div class="hero-stats wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="hero-stat">
+                                    <h3 data-count="7">0</h3>
+                                    <p>Years Experience</p>
+                                </div>
+                                <div class="hero-stat">
+                                    <h3 data-count="9">0</h3>
+                                    <p>Apps Shipped</p>
+                                </div>
+                                <div class="hero-stat">
+                                    <h3 data-count="6">0</h3>
+                                    <p>Companies Trusted Me</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6 d-none d-md-block">
                         <div class="hero-image">
+                            <span class="hero-image-ring"></span>
                             <img src="img/hero.webp" alt="Hero Image">
                         </div>
                     </div>
                 </div>
+                <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
             </div>
         </div>
         <!-- Hero End -->
+
+        <!-- Trusted By Marquee Start -->
+        <div class="trusted-by">
+            <p class="trusted-by-label">Trusted by teams across the globe</p>
+            <div class="marquee">
+                <div class="marquee-track">
+                    <span class="marquee-logo"><img src="img/companies/lucytech-logo.svg" alt="Lucytech"></span>
+                    <span class="marquee-logo"><img src="img/companies/digmi-logo.webp" alt="Digmi"></span>
+                    <span class="marquee-logo"><img src="img/companies/zone247-logo.png" alt="Zone24x7"></span>
+                    <span class="marquee-logo"><img src="img/companies/circles-logo.png" alt="Circles Life"></span>
+                    <span class="marquee-logo"><img src="img/companies/doc990-logo.jpg" alt="Doc990"></span>
+                    <span class="marquee-logo"><img src="img/companies/arkhe_ventures-logo.jpeg" alt="Arkhe Ventures"></span>
+                    <span class="marquee-logo"><img src="img/companies/liveroom-logo.jpg" alt="Liveroom"></span>
+                    <span class="marquee-logo"><img src="img/companies/lucytech-logo.svg" alt="Lucytech"></span>
+                    <span class="marquee-logo"><img src="img/companies/digmi-logo.webp" alt="Digmi"></span>
+                    <span class="marquee-logo"><img src="img/companies/zone247-logo.png" alt="Zone24x7"></span>
+                    <span class="marquee-logo"><img src="img/companies/circles-logo.png" alt="Circles Life"></span>
+                    <span class="marquee-logo"><img src="img/companies/doc990-logo.jpg" alt="Doc990"></span>
+                    <span class="marquee-logo"><img src="img/companies/arkhe_ventures-logo.jpeg" alt="Arkhe Ventures"></span>
+                    <span class="marquee-logo"><img src="img/companies/liveroom-logo.jpg" alt="Liveroom"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Trusted By Marquee End -->
 
 
         <!-- About Start -->
@@ -117,56 +166,56 @@
                             </div>
                             <div class="skills">
                                 <div class="skill-name">
-                                    <p>Swift, Objective C</p><p>95%</p>
+                                    <p>Swift, Objective C</p><p class="skill-percent" data-value="95">0%</p>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <div class="skill-name">
-                                    <p>Kotlin, Java</p><p>95%</p>
+                                    <p>Kotlin, Java</p><p class="skill-percent" data-value="95">0%</p>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <div class="skill-name">
-                                    <p>Flutter, Dart</p><p>90%</p>
+                                    <p>Flutter, Dart</p><p class="skill-percent" data-value="90">0%</p>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <div class="skill-name">
-                                    <p>Reactive: RxSwift, RxCocoa, Combine</p><p>85%</p>
+                                    <p>Reactive: RxSwift, RxCocoa, Combine</p><p class="skill-percent" data-value="85">0%</p>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <div class="skill-name">
-                                    <p>CI/CD: Fastlane, Bitrise, Jenkins, TestFlight</p><p>85%</p>
+                                    <p>CI/CD: Fastlane, Bitrise, Jenkins, TestFlight</p><p class="skill-percent" data-value="85">0%</p>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <div class="skill-name">
-                                    <p>Slack, JIRA, Trello, Pivotal, Monday</p><p>85%</p>
+                                    <p>Slack, JIRA, Trello, Pivotal, Monday</p><p class="skill-percent" data-value="85">0%</p>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <div class="skill-name">
-                                    <p>Git, Github, Gitlab, BitBucket</p><p>85%</p>
+                                    <p>Git, Github, Gitlab, BitBucket</p><p class="skill-percent" data-value="85">0%</p>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <div class="skill-name">
-                                    <p>CleverTap, Appsflyer, Firebase, Newrelic</p><p>85%</p>
+                                    <p>CleverTap, Appsflyer, Firebase, Newrelic</p><p class="skill-percent" data-value="85">0%</p>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-           
+
                             </div>
-                            <a class="btn" href="">Learn More</a>
+                            <a class="btn" href="#portfolio">See My Work</a>
                         </div>
                     </div>
                 </div>
@@ -257,19 +306,24 @@
                                 <h2>Senior Software Engineer</h2>
                                 <div class="company-info">
                                     <div class="company-logo">
-                                        <img src="img/companies/digmi-logo.webp" alt="Digmi" title="Digmi">
+                                        <img src="img/companies/lucytech-logo.svg" alt="Lucytech" title="Lucytech">
                                     </div>
-                                    <h4>Digmi / Lucytech - Stockholm, Sweden</h4>
+                                    <h4>Lucytech - Stockholm, Sweden</h4>
                                     <div class="country-flag">
                                         <img src="img/Flag_of_Sweden.svg.webp" alt="Sweden" title="Sweden">
                                     </div>
                                 </div>
+                                <div class="client-info">
+                                    <span class="client-label">Client</span>
+                                    <div class="client-logo">
+                                        <img src="img/companies/digmi-logo.webp" alt="Digmi" title="Digmi">
+                                    </div>
+                                    <span class="client-name">Digmi</span>
+                                </div>
                             </div>
                             <p>
                                 <ul>
-                                    <li>Conducted thorough code reviews for junior developers, improving code quality by 30%..</li>
-                                    <li>Integrated Customer Rating with CleverTapp.</li>
-                                    <li>Implemented new features to ANP iOS app.</li>
+                                    <li>Developed and released the Digmi Marketing, Marketplace, and Shopping apps for iOS and Android.</li>
                                 </ul>
                             </p>
                         </div>
@@ -909,8 +963,8 @@
                     <div class="col-lg-8">
                         <div class="contact-content">
                             <div class="contact-intro">
-                                <h3>Ready to bring your ideas to life?</h3>
-                                <p>I'm passionate about creating exceptional mobile experiences. Whether you have a project in mind or just want to discuss possibilities, I'd love to hear from you.</p>
+                                <h3>Have a project in mind? Let's build it.</h3>
+                                <p>I'm passionate about creating exceptional mobile experiences. Whether you're hiring for a full-time role or need a freelance iOS/Android/Flutter developer, I'd love to hear from you.</p>
                             </div>
                             
                             <div class="contact-methods">
@@ -1109,7 +1163,8 @@
                 <div class="container">
                     <div class="footer-info">
                         <h2>Malindu Kirindegamaarachchi</h2>
-                        
+                        <p class="footer-tagline">Senior Software Engineer building iOS, Android &amp; Flutter apps — open to freelance and full-time opportunities.</p>
+                        <a class="btn footer-cta" href="#contact">Get In Touch</a>
                         <div class="footer-menu">
                             <p>+94 71 3278512</p>
                             <p>malinduki@outlook.com</p>
@@ -1132,6 +1187,9 @@
         <!-- Footer End -->
         
         
+        <!-- Floating Hire Me CTA -->
+        <a href="#contact" class="hire-float-btn magnetic"><i class="fas fa-briefcase"></i><span>Hire Me</span></a>
+
         <!-- Back to top button -->
         <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
         
@@ -1165,6 +1223,6 @@
         <script src="mail/contact.js"></script>
 
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <script src="js/main.js?v=8"></script>
     </body>
 </html>
