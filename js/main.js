@@ -12,8 +12,38 @@
     loader();
 
 
-    // Initiate the wowjs
-    new WOW().init();
+    // Scroll reveal for .wow elements (replaces WOW.js).
+    // IntersectionObserver only fires when an element's visibility actually
+    // changes, so there's no per-scroll-tick layout read across every
+    // animated element on the page like WOW.js's poll-based approach did.
+    var revealTargets = document.querySelectorAll('.wow');
+    if (revealTargets.length) {
+        if ('IntersectionObserver' in window) {
+            revealTargets.forEach(function (el) {
+                var delay = el.getAttribute('data-wow-delay');
+                if (delay) {
+                    el.style.transitionDelay = delay;
+                }
+            });
+
+            var revealObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+
+            revealTargets.forEach(function (el) {
+                revealObserver.observe(el);
+            });
+        } else {
+            revealTargets.forEach(function (el) {
+                el.classList.add('revealed');
+            });
+        }
+    }
 
 
     // Back to top button + Hire Me floating CTA + Scroll progress bar
