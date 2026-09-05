@@ -419,6 +419,93 @@ a:focus {
 
 
 /*******************************/
+/******** Trusted By CSS *******/
+/*******************************/
+.trusted-by {
+    position: relative;
+    padding: 30px 0 45px 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.trusted-by-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888888;
+    margin-bottom: 26px;
+}
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: marqueeScroll 28s linear infinite;
+}
+
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    width: 150px;
+    margin: 0 18px;
+    padding: 10px 20px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    flex-shrink: 0;
+    transition: border-color .3s, transform .3s, box-shadow .3s;
+}
+
+.marquee-logo:hover {
+    border-color: #D52027;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.marquee-logo img {
+    max-width: 100%;
+    max-height: 34px;
+    object-fit: contain;
+    filter: grayscale(0.7);
+    opacity: .8;
+    transition: filter .3s, opacity .3s;
+}
+
+.marquee-logo:hover img {
+    filter: none;
+    opacity: 1;
+}
+
+@media (max-width: 575.98px) {
+    .trusted-by {
+        padding-top: 12px;
+    }
+
+    .marquee-logo {
+        width: 120px;
+        height: 54px;
+        margin: 0 10px;
+    }
+}
+
+
+/*******************************/
 /******* Section Header ********/
 /*******************************/
 .section-header {
@@ -482,6 +569,13 @@ a:focus {
     position: relative;
     width: 100%;
     margin: -45px 0 45px 0;
+}
+
+/* .about's negative top margin is meant to sit flush against .hero;
+   when the trusted-by marquee sits between them, cancel it so the
+   marquee's own bottom padding isn't swallowed */
+.trusted-by + .about {
+    margin-top: 0;
 }
 
 .about .col-lg-6 {
