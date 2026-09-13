@@ -1154,9 +1154,21 @@ a:focus {
     background: #D52027;
 }
 
+@media (max-width: 767.98px) {
+    .portfolio-carousel .owl-dots {
+        margin-top: 6px;
+    }
+
+    .portfolio-carousel .owl-dot {
+        width: 7px;
+        height: 7px;
+        margin: 0 3px;
+    }
+}
+
 @media (max-width: 575.98px) {
-    .portfolio-carousel .owl-nav button.owl-prev,
-    .portfolio-carousel .owl-nav button.owl-next {
+    .portfolio-carousel .owl-nav .owl-prev,
+    .portfolio-carousel .owl-nav .owl-next {
         width: 34px;
         height: 34px;
         font-size: 13px;

@@ -119,9 +119,10 @@
             navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
             margin: 20,
             responsive: {
-                0: { items: 1 },
-                576: { items: 2 },
-                992: { items: 3 }
+                0: { items: 1, nav: false },
+                576: { items: 2, nav: false },
+                768: { items: 2, nav: true },
+                992: { items: 3, nav: true }
             }
         });
     }
