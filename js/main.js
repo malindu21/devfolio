@@ -93,17 +93,46 @@
     
     
     
-    // Portfolio filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
+    // Portfolio carousel
+    var $portfolioCarousel = $('.portfolio-carousel');
+    var portfolioAllItems = $portfolioCarousel.children('.portfolio-item').clone(true, true);
+
+    function renderPortfolioCarousel(filterSelector) {
+        if ($portfolioCarousel.hasClass('owl-loaded')) {
+            $portfolioCarousel.trigger('destroy.owl.carousel');
+            $portfolioCarousel
+                .removeClass('owl-loaded owl-drag owl-hidden owl-responsive owl-center owl-loading owl-text-select-on owl-grab')
+                .empty();
+        }
+
+        var itemsToShow = filterSelector === '*' ? portfolioAllItems : portfolioAllItems.filter(filterSelector);
+        $portfolioCarousel.append(itemsToShow.clone(true, true));
+
+        $portfolioCarousel.owlCarousel({
+            center: true,
+            loop: itemsToShow.length > 2,
+            autoplay: true,
+            autoplayTimeout: 4000,
+            autoplayHoverPause: true,
+            dots: true,
+            nav: true,
+            navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+            margin: 20,
+            responsive: {
+                0: { items: 1 },
+                576: { items: 2 },
+                992: { items: 3 }
+            }
+        });
+    }
+
+    renderPortfolioCarousel('*');
 
     $('#portfolio-filter li').on('click', function () {
-        $("#portfolio-filter li").removeClass('filter-active');
+        $('#portfolio-filter li').removeClass('filter-active');
         $(this).addClass('filter-active');
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
+        renderPortfolioCarousel($(this).data('filter'));
     });
-    
+
 })(jQuery);
 

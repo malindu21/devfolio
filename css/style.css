@@ -1068,6 +1068,101 @@ a:focus {
     margin-bottom: 30px; /* Ensure some space between items */
 }
 
+.portfolio-carousel.owl-carousel {
+    padding: 10px 0 30px 0;
+}
+
+.portfolio-carousel .owl-stage-outer {
+    padding: 20px 0;
+}
+
+.portfolio-carousel .owl-item {
+    transform: scale(0.82);
+    opacity: 0.5;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.portfolio-carousel .owl-item.center {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 2;
+}
+
+.portfolio-carousel .owl-item .portfolio-item {
+    margin-bottom: 0;
+}
+
+.portfolio-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.portfolio-carousel .owl-nav .owl-prev,
+.portfolio-carousel .owl-nav .owl-next {
+    pointer-events: auto;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #D52027;
+    border: 2px solid #D52027;
+    border-radius: 50%;
+    font-size: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+    transition: all 0.3s ease;
+}
+
+.portfolio-carousel .owl-nav .owl-prev {
+    margin-left: -10px;
+}
+
+.portfolio-carousel .owl-nav .owl-next {
+    margin-right: -10px;
+}
+
+.portfolio-carousel .owl-nav .owl-prev:hover,
+.portfolio-carousel .owl-nav .owl-next:hover {
+    background: #D52027;
+    color: #ffffff;
+}
+
+.portfolio-carousel .owl-dots {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.portfolio-carousel .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(213, 32, 39, 0.25);
+    transition: background 0.3s ease;
+}
+
+.portfolio-carousel .owl-dot.active {
+    background: #D52027;
+}
+
+@media (max-width: 575.98px) {
+    .portfolio-carousel .owl-nav button.owl-prev,
+    .portfolio-carousel .owl-nav button.owl-next {
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+}
+
 
 .portfolio .portfolio-wrap {
     position: relative;
