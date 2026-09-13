@@ -330,6 +330,29 @@ a:focus {
     margin-right: 10px;
 }
 
+.hero-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.hero-social-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero-social-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+    color: #ffffff;
+}
+
 
 @media (max-width: 767.98px) {
     .brand-text {
@@ -1069,7 +1092,7 @@ a:focus {
 }
 
 .portfolio-carousel.owl-carousel {
-    padding: 10px 0 30px 0;
+    padding: 10px 64px 30px 64px;
 }
 
 .portfolio-carousel .owl-stage-outer {
@@ -1115,18 +1138,10 @@ a:focus {
     background: #ffffff;
     color: #D52027;
     border: 2px solid #D52027;
-    border-radius: 50%;
+    border-radius: 8px;
     font-size: 16px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
     transition: all 0.3s ease;
-}
-
-.portfolio-carousel .owl-nav .owl-prev {
-    margin-left: -10px;
-}
-
-.portfolio-carousel .owl-nav .owl-next {
-    margin-right: -10px;
 }
 
 .portfolio-carousel .owl-nav .owl-prev:hover,
@@ -1155,6 +1170,11 @@ a:focus {
 }
 
 @media (max-width: 767.98px) {
+    .portfolio-carousel.owl-carousel {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .portfolio-carousel .owl-dots {
         margin-top: 6px;
     }
@@ -2240,6 +2260,24 @@ a:focus {
     top: 50%;
     right: 0; /* Moves the icon bar to the right */
     transform: translateY(50%);
+    z-index: 999;
+  }
+
+  @media (max-width: 767.98px) {
+    .icon-bar {
+        top: 70px;
+        right: auto;
+        left: 0;
+        transform: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .icon-bar.is-visible {
+        opacity: 1;
+        visibility: visible;
+    }
   }
   
   /* Style the icon bar links */

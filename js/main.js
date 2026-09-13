@@ -28,8 +28,18 @@
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
-    
-    
+
+
+    // Social icon bar: on mobile, only show it once the user scrolls past the hero
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+            $('.icon-bar').addClass('is-visible');
+        } else {
+            $('.icon-bar').removeClass('is-visible');
+        }
+    });
+
+
     // Sticky Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 0) {
