@@ -1151,6 +1151,19 @@ a:focus {
         padding-right: 0;
     }
 
+    /* On phones the center item is only slightly bigger than the viewport,
+       so scaling neighbors down (around their own, mostly off-screen center)
+       pulls their peeking slivers out of view entirely. Keep just the dim. */
+    .portfolio-carousel .owl-item {
+        transform: none;
+        opacity: 0.45;
+    }
+
+    .portfolio-carousel .owl-item.center {
+        transform: none;
+        opacity: 1;
+    }
+
     .portfolio-carousel .owl-dots {
         margin-top: 6px;
     }
